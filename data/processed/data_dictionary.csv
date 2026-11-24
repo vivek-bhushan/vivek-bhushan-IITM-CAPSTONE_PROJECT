@@ -1,0 +1,57 @@
+column,dtype,provenance,n_missing,n_unique,example,description
+customer_id,object,original,0,250,C100,Unique customer identifier (categorical key).
+age,int64,original,0,43,26,Customer age in years (numerical).
+gender,object,original,0,2,Male,Customer gender (categorical).
+city_tier,object,original,0,3,Tier-3,City tier of the customer: Tier-1/2/3 (categorical).
+state,object,original,0,5,Tamil Nadu,Customer state (categorical).
+income_band,object,original,0,3,Low,Self-reported income band: Low/Medium/High (categorical).
+occupation,object,original,0,5,Self-Employed,Customer occupation (categorical).
+membership_level,object,original,0,4,Platinum,Loyalty tier: Bronze/Silver/Gold/Platinum (categorical).
+days_since_last_purchase,int64,original,0,110,42,Recency in days since the customer's last purchase (numerical).
+avg_order_value,float64,original,0,1491,3334.08,Customer's historical average order value in INR (numerical).
+total_orders,int64,original,0,19,3,Lifetime number of orders placed by the customer (numerical).
+preferred_channel,object,original,0,3,App,Preferred shopping channel: App/Web/Store (categorical).
+product_id,object,original,0,300,P1000,Unique product identifier (categorical key).
+category,object,original,0,3,Accessories,Top-level product category (categorical).
+sub_category,object,original,0,12,Backpack,Product sub-category (categorical).
+brand,object,original,0,14,Fastrack,Product brand (categorical).
+base_price,float64,original,0,1424,3478.35,List price before discount in INR (numerical).
+discount_percent,int64,original,0,8,0,"Discount applied, 0-70 percent (numerical)."
+final_price,float64,original,0,1430,3478.35,Price actually paid after discount in INR (numerical).
+avg_product_rating,float64,original,0,25,4.2,"Average product rating, 1-5 (numerical)."
+stock_level,int64,original,0,196,28,Units currently in stock (numerical).
+color,object,original,0,10,Blue,Product colour (categorical).
+size,object,original,0,5,XL,"Product size; 'NA' for non-sized items (categorical, has missing)."
+material,object,original,0,7,Leather,Product material (categorical).
+season,object,original,0,4,Winter,Intended season: Summer/Winter/All-Season (categorical).
+is_returnable,int64,original,0,2,1,1 if the product is eligible for return (binary).
+purchase_flag,int64,original,0,2,0,TARGET - 1 if the interaction converted to a purchase (binary).
+quantity,int64,original,0,3,1,Units purchased in the interaction (numerical).
+payment_mode,object,original,0,5,Wallet,Payment method used (categorical).
+delivery_type,object,original,0,2,Standard,Delivery speed chosen: Standard/Express (categorical).
+time_on_page,float64,original,0,1128,250.7,Seconds spent on the product page (numerical).
+added_to_cart,int64,original,0,2,1,1 if the item was added to cart (binary).
+wishlist_flag,int64,original,0,2,0,1 if the item was wishlisted (binary).
+returned_flag,int64,original,0,2,0,"TARGET - 1 if the purchased item was returned (binary, imbalanced)."
+rating_given,int64,original,0,4,4,Post-purchase rating 1-5 (ordinal).
+review_sentiment_label,object,original,0,3,positive,Sentiment label of the review text (categorical).
+product_title,object,original,0,746,Fastrack Blue Backpack Leather Accessorie,Short product title (text).
+product_description,object,original,0,1241,A blue backpack from Fastrack made with leather. Designed fo,Marketing description of the product (text).
+customer_review_text,object,original,0,28,Loved the blue accessories product. Good quality and worth t,Free-text customer review (text).
+customer_query,object,original,0,1498,Need a blue backpack for travel under Rs. 4478,Synthetic natural-language query for the product (text).
+policy_doc_id,object,original,0,5,POL_WARRANTY,Foreign key into the policy documents (text).
+policy_text_snippet,object,original,0,5,Watches and selected accessories carry a 6-month manufacture,Policy snippet attached to the record (text).
+image_path,object,original,0,300,images/P1000.jpg,"Relative path to the product image (text, optional multimodal)."
+recommended_use_case,object,original,0,7,Travel,"Intended use case, e.g. Daily Wear (categorical)."
+style_tags,object,original,0,162,"Blue, Leather, Travel",Comma-separated style tags (text).
+occasion_tags,object,original,0,7,Travel,Comma-separated occasion tags (text).
+size_missing,int64,engineered,0,2,0,ENGINEERED - 1 if the original size value was missing.
+product_key,object,engineered,0,1422,SKU_ce2771aec9,"ENGINEERED - Stable unique product identity. The source product_id is NOT unique (300 ids repeat across 1500 rows with different attributes), so product identity is derived from the full attribute signature."
+price_band,object,engineered,0,4,Premium,ENGINEERED - Bucketed final_price into Budget/Mid/Premium/Luxury.
+discount_band,object,engineered,0,4,None,ENGINEERED - Bucketed discount_percent into None/Low/Medium/High.
+is_discounted,int64,engineered,0,2,0,ENGINEERED - 1 if discount_percent > 0.
+price_sensitivity,float64,engineered,0,1249,0.0,"ENGINEERED - discount_percent / (base_price/1000), a proxy for how hard the price was cut."
+engagement_score,float64,engineered,0,1268,1.0512,"ENGINEERED - Composite of time_on_page, added_to_cart and wishlist_flag."
+recency_band,object,engineered,0,3,Warm,ENGINEERED - Bucketed days_since_last_purchase into Active/Warm/Cooling/Dormant.
+customer_value,float64,engineered,0,1499,10002.24,"ENGINEERED - avg_order_value * total_orders, a lifetime-value proxy."
+product_text,object,engineered,0,1500,Fastrack Blue Backpack Leather Accessorie. Category: Accesso,ENGINEERED - Concatenated retrieval-ready product document (title + description + attributes).

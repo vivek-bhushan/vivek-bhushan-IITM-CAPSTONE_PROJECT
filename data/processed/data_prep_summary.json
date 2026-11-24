@@ -1,0 +1,145 @@
+{
+  "raw_shape": [
+    1500,
+    46
+  ],
+  "clean_shape": [
+    1500,
+    47
+  ],
+  "feature_shape": [
+    1500,
+    56
+  ],
+  "n_original_columns": 46,
+  "n_engineered_columns": 10,
+  "missing_after_clean": 0,
+  "inspection": {
+    "n_rows": 1500,
+    "n_cols": 46,
+    "columns": [
+      "customer_id",
+      "age",
+      "gender",
+      "city_tier",
+      "state",
+      "income_band",
+      "occupation",
+      "membership_level",
+      "days_since_last_purchase",
+      "avg_order_value",
+      "total_orders",
+      "preferred_channel",
+      "product_id",
+      "category",
+      "sub_category",
+      "brand",
+      "base_price",
+      "discount_percent",
+      "final_price",
+      "avg_product_rating",
+      "stock_level",
+      "color",
+      "size",
+      "material",
+      "season",
+      "is_returnable",
+      "purchase_flag",
+      "quantity",
+      "payment_mode",
+      "delivery_type",
+      "time_on_page",
+      "added_to_cart",
+      "wishlist_flag",
+      "returned_flag",
+      "rating_given",
+      "review_sentiment_label",
+      "product_title",
+      "product_description",
+      "customer_review_text",
+      "customer_query",
+      "policy_doc_id",
+      "policy_text_snippet",
+      "image_path",
+      "recommended_use_case",
+      "style_tags",
+      "occasion_tags"
+    ],
+    "dtypes": {
+      "customer_id": "object",
+      "age": "int64",
+      "gender": "object",
+      "city_tier": "object",
+      "state": "object",
+      "income_band": "object",
+      "occupation": "object",
+      "membership_level": "object",
+      "days_since_last_purchase": "int64",
+      "avg_order_value": "float64",
+      "total_orders": "int64",
+      "preferred_channel": "object",
+      "product_id": "object",
+      "category": "object",
+      "sub_category": "object",
+      "brand": "object",
+      "base_price": "float64",
+      "discount_percent": "int64",
+      "final_price": "float64",
+      "avg_product_rating": "float64",
+      "stock_level": "int64",
+      "color": "object",
+      "size": "object",
+      "material": "object",
+      "season": "object",
+      "is_returnable": "int64",
+      "purchase_flag": "int64",
+      "quantity": "int64",
+      "payment_mode": "object",
+      "delivery_type": "object",
+      "time_on_page": "float64",
+      "added_to_cart": "int64",
+      "wishlist_flag": "int64",
+      "returned_flag": "int64",
+      "rating_given": "int64",
+      "review_sentiment_label": "object",
+      "product_title": "object",
+      "product_description": "object",
+      "customer_review_text": "object",
+      "customer_query": "object",
+      "policy_doc_id": "object",
+      "policy_text_snippet": "object",
+      "image_path": "object",
+      "recommended_use_case": "object",
+      "style_tags": "object",
+      "occasion_tags": "object"
+    },
+    "missing": {
+      "size": 270
+    },
+    "n_duplicates": 0,
+    "target_balance": {
+      "purchase_flag": {
+        "1": 770,
+        "0": 730
+      },
+      "returned_flag": {
+        "0": 1233,
+        "1": 267
+      },
+      "added_to_cart": {
+        "1": 1441,
+        "0": 59
+      },
+      "wishlist_flag": {
+        "1": 764,
+        "0": 736
+      },
+      "rating_given": {
+        "3": 512,
+        "4": 485,
+        "2": 328,
+        "5": 175
+      }
+    }
+  }
+}
