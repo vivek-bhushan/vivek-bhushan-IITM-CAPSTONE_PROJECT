@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "query": "Recommend casual sneakers under Rs.4000 for daily wear.",
+    "intent": "product_search",
+    "tool": "product_search",
+    "summary": "retrieved 5 products: ['PROD_P1268', 'PROD_P1142', 'PROD_P1279', 'PROD_P1141', 'PROD_P1035']",
+    "trace": {
+      "query": "Recommend casual sneakers under Rs.4000 for daily wear.",
+      "intent": "product_search",
+      "tool": "product_search",
+      "reason": "Matched budget + product discovery intent (max_price=4000, category=Sneakers)",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 2,
+    "query": "Can I return a discounted product after 7 days?",
+    "intent": "policy_qa",
+    "tool": "policy_qa",
+    "summary": "answered from POL_RETURNS (conf 0.3219): Returns allowed within 7 days for unused products if discount <= 30%.",
+    "trace": {
+      "query": "Can I return a discounted product after 7 days?",
+      "intent": "policy_qa",
+      "tool": "policy_qa",
+      "reason": "Matched store return/compliance rule intent -> POL_RETURNS",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 3,
+    "query": "Suggest products for a premium customer who prefers black formal shoes.",
+    "intent": "product_search",
+    "tool": "product_search",
+    "summary": "retrieved 5 products: ['PROD_P1001', 'PROD_P1255', 'PROD_P1056', 'PROD_P1088', 'PROD_P1102']",
+    "trace": {
+      "query": "Suggest products for a premium customer who prefers black formal shoes.",
+      "intent": "product_search",
+      "tool": "product_search",
+      "reason": "Matched attribute-filtered catalog search (color=black, sub_category=Formal)",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 4,
+    "query": "Which customer segment seems most price-sensitive?",
+    "intent": "analytics",
+    "tool": "analytics",
+    "summary": "Segment 1 is the most price-sensitive (mean price-sensitivity 9.985, avg discount 18.619%, n=105).",
+    "trace": {
+      "query": "Which customer segment seems most price-sensitive?",
+      "intent": "analytics",
+      "tool": "analytics",
+      "reason": "Matched customer cohort / price-sensitivity analytical query",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 5,
+    "query": "Summarise the top three retrieved products and explain why they fit the query.",
+    "intent": "review_summary",
+    "tool": "review_summary",
+    "summary": "sentiment {'positive': 0.440, 'neutral': 0.341, 'negative': 0.219}",
+    "trace": {
+      "query": "Summarise the top three retrieved products and explain why they fit the query.",
+      "intent": "review_summary",
+      "tool": "review_summary",
+      "reason": "Matched summarization / customer sentiment aggregation pattern",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 6,
+    "query": "How long does standard delivery take?",
+    "intent": "policy_qa",
+    "tool": "policy_qa",
+    "summary": "answered from POL_SHIPPING (conf 0.1815): Standard delivery takes 3 to 5 business days.",
+    "trace": {
+      "query": "How long does standard delivery take?",
+      "intent": "policy_qa",
+      "tool": "policy_qa",
+      "reason": "Matched shipping SLA compliance query -> POL_SHIPPING",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 7,
+    "query": "What is the sentiment in reviews for Shoes?",
+    "intent": "review_summary",
+    "tool": "review_summary",
+    "summary": "sentiment {'positive': 0.437, 'neutral': 0.340, 'negative': 0.223}",
+    "trace": {
+      "query": "What is the sentiment in reviews for Shoes?",
+      "intent": "review_summary",
+      "tool": "review_summary",
+      "reason": "Matched category review sentiment breakdown query (category=Shoes)",
+      "hops": 1,
+      "status": "ok"
+    }
+  },
+  {
+    "id": 8,
+    "query": "Calculate the price of 2500 with 20% discount.",
+    "intent": "calculator",
+    "tool": "calculator",
+    "summary": "Rs.2500 with 20% off is Rs.2000.00.",
+    "trace": {
+      "query": "Calculate the price of 2500 with 20% discount.",
+      "intent": "calculator",
+      "tool": "calculator",
+      "reason": "Matched explicit discount/percentage arithmetic pattern",
+      "hops": 1,
+      "status": "ok"
+    }
+  }
+]

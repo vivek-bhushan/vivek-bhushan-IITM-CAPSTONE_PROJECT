@@ -1,0 +1,92 @@
+{
+  "artifacts": {
+    "kmeans": {
+      "joblib": "customer_segmentation_kmeans.joblib",
+      "pkl": "customer_segmentation_kmeans.pkl"
+    },
+    "scaler": {
+      "joblib": "customer_segmentation_scaler.joblib",
+      "pkl": "customer_segmentation_scaler.pkl"
+    }
+  },
+  "n_customers": 250,
+  "features_used": [
+    "avg_order_value",
+    "total_orders",
+    "days_since_last_purchase",
+    "discount_percent",
+    "time_on_page",
+    "customer_value",
+    "price_sensitivity"
+  ],
+  "feature_justification": "These features capture the three classic segmentation axes: value (avg_order_value, customer_value, total_orders), recency (days_since_last_purchase) and price behaviour (discount_percent, price_sensitivity), plus engagement (time_on_page).",
+  "diagnostics": [
+    {
+      "k": 2,
+      "inertia": 1422.95,
+      "silhouette": 0.1759
+    },
+    {
+      "k": 3,
+      "inertia": 1213.39,
+      "silhouette": 0.1725
+    },
+    {
+      "k": 4,
+      "inertia": 1108.28,
+      "silhouette": 0.1683
+    },
+    {
+      "k": 5,
+      "inertia": 1032.75,
+      "silhouette": 0.1433
+    },
+    {
+      "k": 6,
+      "inertia": 966.75,
+      "silhouette": 0.143
+    },
+    {
+      "k": 7,
+      "inertia": 911.83,
+      "silhouette": 0.1435
+    },
+    {
+      "k": 8,
+      "inertia": 860.44,
+      "silhouette": 0.144
+    }
+  ],
+  "chosen_k": 2,
+  "chosen_silhouette": 0.1759,
+  "segment_profile": [
+    {
+      "segment": 0,
+      "n_customers": 145,
+      "avg_order_value": 3262.153,
+      "total_orders": 11.234,
+      "recency_days": 14.131,
+      "avg_discount": 17.943,
+      "price_sensitivity": 8.182,
+      "customer_value": 38638.526,
+      "purchase_rate": 0.515,
+      "description": "Value-Focused Regulars: avg order Rs.3262, 11.2 orders, 14 days since last purchase, 17.9% avg discount, purchase rate 52%."
+    },
+    {
+      "segment": 1,
+      "n_customers": 105,
+      "avg_order_value": 3800.684,
+      "total_orders": 14.343,
+      "recency_days": 14.543,
+      "avg_discount": 18.619,
+      "price_sensitivity": 9.985,
+      "customer_value": 62573.217,
+      "purchase_rate": 0.511,
+      "description": "High-Value / Price-Sensitive Loyalists: avg order Rs.3801, 14.3 orders, 15 days since last purchase, 18.6% avg discount, purchase rate 51%."
+    }
+  ],
+  "segment_descriptions": {
+    "0": "Value-Focused Regulars: avg order Rs.3262, 11.2 orders, 14 days since last purchase, 17.9% avg discount, purchase rate 52%.",
+    "1": "High-Value / Price-Sensitive Loyalists: avg order Rs.3801, 14.3 orders, 15 days since last purchase, 18.6% avg discount, purchase rate 51%."
+  }
+}

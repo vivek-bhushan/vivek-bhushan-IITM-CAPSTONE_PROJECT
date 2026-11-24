@@ -1,0 +1,34 @@
+# Intelligent Retail Decision Assistant - Capstone Project
+# Python 3.11
+#
+# The project runs fully offline with just the core scientific stack.
+# The optional block at the bottom enables real LLM generation and FAISS.
+
+# --- Core data & ML ---
+pandas>=2.0,<3.0
+numpy>=1.24,<3.0
+scikit-learn>=1.3,<2.0
+scipy>=1.10,<2.0
+joblib>=1.3,<2.0
+
+# --- Visualisation ---
+matplotlib>=3.7,<4.0
+seaborn>=0.12,<1.0
+
+# --- Notebooks ---
+jupyter>=1.0
+notebook>=7.0
+nbformat>=5.9
+nbconvert>=7.0
+ipykernel>=6.25
+ipython>=8.0
+
+# --- Report generation ---
+fpdf2>=2.7
+markdown>=3.5
+
+# --- Optional: real LLM generation (set OPENAI_API_KEY to enable) ---
+# openai>=1.30
+
+# --- Optional: FAISS vector index (NumPy cosine fallback is used if absent) ---
+# faiss-cpu>=1.7
